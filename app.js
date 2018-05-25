@@ -22,10 +22,16 @@ function response(req, res){
   });
 }
 io.on("connection", (socket) => {
-    socket.on("send message", (sent_msg, callback) => {
-        sent_msg = "[" + getCurrentDate() + "]: " + sent_msg;
-        io.sockets.emit("update messages", sent_msg);
-        callback();
+  io.emit('chat message', ' a new user has joined');
+
+  socket.on("send message", (sent_msg, callback) => {
+      sent_msg = "[" + getCurrentDate() + "]: " + sent_msg;
+      io.sockets.emit("update messages", sent_msg);
+      callback();
+  });
+
+  socket.on('disconnect', function() {
+       io.emit('chat message', 'some user disconnected');
     });
 });
 function getCurrentDate() {
