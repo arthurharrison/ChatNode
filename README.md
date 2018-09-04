@@ -7,18 +7,16 @@
 * As I said in the the subtitle, it's a simple group chat where it shows your username and message;
 * It would be good to know how many people are in the chat currently and show their name in a sidebar or something, but that would need a 'login' page first and I will develop it when I finish working in the layout, which is a very simple layout.
 ---
-* Soon I will upload a Image.
+The Current version looks like this:
+![ChatNode](https://i.imgur.com/QF8vKV9.png)
 
 
 
 
 ### How does it work?
-* Sorry, but I will detail it better soon enough.
+* You will only need to simply execute the app.js script via NodeJS and you can access it, if you want to execute a simple test with your friends I recommend using [LocalTunnel](https://localtunnel.github.io/www/).
 
-### What I've learned
-* I got to know a new thing about NodeJS, which is Socket.io and I just loved it, but I still need to study more;
-
-* I had the challenge in doing something in CSS and HTML which are things that I am not that comfortable with.
+Please feel free to help or to send me some feedback about this repository :)
 
 
 
