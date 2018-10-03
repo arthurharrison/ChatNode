@@ -1,10 +1,34 @@
-const app = require('http').createServer(response);
-const fs = require('fs');
-const io = require('socket.io')(app)
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const http = require('http').Server(app);
+//const app = require('http').createServer(response);
+//const fs = require('fs');
+const io = require('socket.io')(http);
 
-app.listen(3000);
+http.listen(3000);
 console.log("App is running on port 3000...");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static('public'));
+
+app.get('/', (req, res)=>{
+  res.redirect('/index');
+});
+
+app.get('/index', (req, res)=>{
+  res.sendFile(__dirname + '/index.html');
+});
+/*
+let nameN;
+app.post('/change', (req, res)=>{
+  nameN = req.body.name;
+  res.send('done');
+});
+*/
+/*
 function response(req, res){
   let file = ""
   if(req.url == "/"){
@@ -21,6 +45,8 @@ function response(req, res){
       res.end(data);
   });
 }
+*/
+
 io.on("connection", (socket) => {
   io.emit('chat message', ' a new user has joined');
 
