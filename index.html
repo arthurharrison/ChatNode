@@ -5,13 +5,19 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
   <body>
-    <div class='chatter' id='chatter'>
-      <div id="history"></div>
-      <form id="chat">
-        <input type="user" id="user_text" placeholder="username" name="user_text" />
-        <input type="text" placeholder="text" id="msg_text" name="msg_text" />
-        <input type="submit" value="Send!" />
-      </form>
+    <div class='chatBox'>
+      <div class='loginIn' id='loginIn'>
+          <input type="user" class='frmGo' id="user_text" placeholder="username" name="user_text" />
+          <button type="button" id='btnGo' value="Seguir">Seguir</button>
+      </div>
+      <div class='chatter' id='chatter'>
+        <div id="history"></div>
+        <form id="chat">
+          <input type="user" id="user_text" placeholder="username" name="user_text" />
+          <input type="text" placeholder="text" id="msg_text" name="msg_text" />
+          <input type="submit" value="Send!" />
+        </form>
+      </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
@@ -35,5 +41,6 @@
         $("#history").append(final_message);
       });
     </script>
+    <script src="js/screen.js"></script>
   </body>
 </html>

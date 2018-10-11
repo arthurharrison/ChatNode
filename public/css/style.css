@@ -37,3 +37,25 @@ form input[type='submit'] {
  border: 2px solid #eb5424;
  height: 550px;
 }
+.chatter{
+    display: none;
+}
+.frmGo{
+    border: 2px solid #eb5424;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: 10%;
+    width: 40%;
+}
+#btnGo{
+    background: #eb5424;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    position: fixed;
+    width: 40%;
+    height: 30px;
+}
