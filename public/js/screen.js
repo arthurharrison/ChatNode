@@ -14,25 +14,22 @@ document.getElementById("btnGo").onclick = () => {
         
         $("form#chat").submit(function(e) {
             e.preventDefault();
-            socket.emit("send message", $(this).find("userText").val() + " - " + $(this).find("#msg_text").val(), function() {
+            socket.emit("send message", $(this).find("#msg_text").val(), function() {
                 $("form#chat #msg_text").val("");
             });
         });
   
         socket.on('chat message', function(msg){
-          //handle the message however you would like
           $('#history').append($('<p />').text(msg));
-  
         });
   
         socket.on("update messages", function(msg){
           var final_message = $("<p />").text(msg);
           $("#history").append(final_message);
         });
-   
-        console.log('deu certo');
+        
       }).fail(function(){
-        console.log('deu ruim');
+        console.log('Mistakes were made');
       });
 
 }
