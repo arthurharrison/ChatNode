@@ -21,13 +21,13 @@ app.get('/', (req, res)=>{
 app.get('/index', (req, res)=>{
   res.sendFile(__dirname + '/index.html');
 });
-/*
+
 let nameN;
 app.post('/change', (req, res)=>{
   nameN = req.body.name;
   res.send('done');
 });
-*/
+
 /*
 function response(req, res){
   let file = ""
@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
   io.emit('chat message', ' a new user has joined');
 
   socket.on("send message", (sent_msg, callback) => {
-      sent_msg = "[" + getCurrentDate() + "]: " + sent_msg;
+      sent_msg = "[" + getCurrentDate() + "]: "+nameN+ '-' + sent_msg;
       io.sockets.emit("update messages", sent_msg);
       callback();
   });
